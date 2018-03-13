@@ -1,6 +1,6 @@
 public class ManualTransmission extends Transmission {
 
     ManualTransmission(){
-        super.type = "Manual Transmission Computer" ;       //setting tranmission
+        super.setType( "Manual Transmission Computer" );       //setting tranmission
     }
 }

@@ -1,9 +1,9 @@
 public  abstract class Car {
-    AbstractWheels wheels;      //availability of multiple types of wheels from different companies
-    Engine  engine;             // two different types of engines, includes a transmission abstract object
-    Omission omission;             //two different omission types
-    String make;
-    String model;
+    private AbstractWheels wheels;      //availability of multiple types of wheels from different companies
+    private Engine  engine;             // two different types of engines, includes a transmission abstract object
+    private Omission omission;             //two different omission types
+    private String make;
+    private String model;
 
 
 

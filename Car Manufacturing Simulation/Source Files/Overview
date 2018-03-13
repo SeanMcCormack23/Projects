@@ -1,0 +1,11 @@
+/* The aim of this project is to create an abstract factory of abstract cars with abstract parts. 
+
+-Wheels/Tyres are an abstract idea of which companies such as Bridgestone and Michelon have been derived from. 
+-Engines are an abstract class of which there are different engines that sport different types of clutchs etc.
+-Engines contain an abstract transmission to which can be set to 'Manual' or 'Automatic'.
+-Omissions can be set at the specific car class for customisation. 
+
+Each car comes from an abstract company (BMW) or (Mini) that has a set of specfic models.
+These specific models have been designed to use combinations of the different engines,transmissions,tyres and omissions.
+
+*/

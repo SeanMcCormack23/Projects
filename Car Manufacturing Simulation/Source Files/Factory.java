@@ -17,6 +17,9 @@ public class Factory {
 
     System.out.println(make2);
 
+    Car make3 = new MiniCooper();
+
+    System.out.println(make3);
 
 
 

@@ -8,7 +8,7 @@ var config = {
   };
   firebase.initializeApp(config);
 
-
+// creates a new patient, mimics the patient admissions form, user has to select ID for now.
 function sendNewPatient(userID) {
 
   

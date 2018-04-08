@@ -9,6 +9,8 @@ var config = {
   firebase.initializeApp(config);
 
 
+// this sends all this data collected into the firebase underneath the patient id.
+
 function sendNewRecord(Day) {
   var idVal = document.getElementById('userId').value;
   var day = "Day"+document.getElementById('Day').value;
@@ -91,6 +93,7 @@ function sendNewRecord(Day) {
           Result:result,
           Verdict:verdict
    });
+   //result=0;
 
 
 }

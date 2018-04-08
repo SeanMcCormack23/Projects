@@ -119,7 +119,7 @@ var config = {
       recordPain.innerHTML= snap.val().PainLevels;
       recordDate.innerHTML= snap.val().Date;
       recordCheck.innerHTML= snap.val().IntakeTime;
-      recordPS.innerHTML = snap.val().Result;
+      recordPS.innerHTML = snap.val().PS.Result;
   
       var recordDay = document.getElementById('day');
       recordDay.innerHTML=userSpecDay;
@@ -128,7 +128,7 @@ var config = {
     }
   
 
-    function sendRecord (){
+    function sendRecord (){     //sends the record to firebase ( this is just an update function)
       if(userSpecDay===""){   //catches error
         alert("Error");
 
@@ -267,7 +267,7 @@ var config = {
     }
 
 
-function createRecord() {
+function createRecord() {   //creates record within the specific patient selected
   var i;
   if(userinput==='undefined'){
     alert("error");
@@ -330,7 +330,7 @@ function createRecord() {
 }
 
 
-function addPatientButtons(number){
+function addPatientButtons(number){ // dynamically makes the new buttons based on how many patients
  
    var div = document.getElementById('newStuff');
           var but = document.createElement("button");
@@ -346,7 +346,7 @@ function addPatientButtons(number){
           
 
 }
-function addPatientDay(day){
+function addPatientDay(day){  //dynamically adds the days of the selected patient
   
           var div = document.getElementById('daysDiv');
           var but = document.createElement("button");
@@ -359,14 +359,14 @@ function addPatientDay(day){
 
 }
 
-function resetDays() {
+function resetDays() {        //resets the div element
 
         var div = document.getElementById('daysDiv');
         div.innerHTML="";
   
 }
 
-function deletePatient() {
+function deletePatient() {    //not great but half works
 
          var rootRefRec = firebase.database().ref().child('Patients').child(userinput);
          rootRefRec.remove();

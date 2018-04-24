@@ -8,16 +8,14 @@ var config = {
   };
   firebase.initializeApp(config);
 
+
+
   var Day = "Day";
   var i = 2;
-
   var patientCounter;
   var patientId = "000"+patientCounter;
-
   var array = []; //an array to capture the elements in the snap references
-
   var p = "Patients";   //just used a variable to find the reference point in firebase
-  
   var userinput;
   var userSpecDay;
   const objectName = document.getElementById('name');
@@ -25,9 +23,6 @@ var config = {
   const objectId = document.getElementById('id');
   const objectBlood = document.getElementById('blood');
   const objectCondition = document.getElementById('condition');
-
-
-
   const recordDate = document.getElementById('recordDate');
   const recordTemp = document.getElementById('recordTemp');
   const recordPain = document.getElementById('recordPain');
@@ -35,7 +30,7 @@ var config = {
   const recordCheck = document.getElementById('recordCheck');
   const recordPS = document.getElementById('recordPS');
   
-
+//onload
   function onload() {
     var into = firebase.database().ref().child('Patients');
       into.once('value', function(snapshot) {
@@ -63,8 +58,9 @@ var config = {
   the following lines snap the values into a table.
   */
   
-  
-  function personChange (userinput) { //changes the person which references everything else
+  //changes the person which references everything else
+
+  function personChange (userinput) { 
       resetDays(); //resets the days to none.
     
       var Address;    //attributes that will be displayed as part of person change
@@ -75,6 +71,8 @@ var config = {
       var DOB;
       this.userinput = userinput;
   
+      //retrieves the Name,ID,Address,Blood,Condition
+      
     var rootRef = firebase.database().ref().child('Patients').child(userinput).child('Patient Information').child('Personal'); //reference to part of firebase
   
     rootRef.on('value',snap => {
@@ -86,7 +84,8 @@ var config = {
         objectCondition.innerHTML = snap.val().Condition;
   
      });
-
+      
+    // creates the days necessary
     var into = firebase.database().ref().child('Patients').child(userinput).child('Records');
 
           into.once('value', function(snapshot) {
@@ -102,7 +101,9 @@ var config = {
   
   }
   
-  function dayChange(userSpecDay) {       //changes the day of the user.
+  //changes the day of the user.
+
+  function dayChange(userSpecDay) {     
 
 
       this.userSpecDay = userSpecDay;
@@ -110,10 +111,7 @@ var config = {
   
       rootRefRec.on('value',snap => {
   
-     // recordBlood.innerHTML =snap.val().BloodPressureLevels;
-
-      //recordBreath.innerHTML = snap.val().Comments;
-     // recordPain.innerHTML = snap.val().PainLevels;
+ 
       recordNurse.innerHTML= snap.val().NurseNo;
       recordTemp.innerHTML= snap.val().Tempature;
       recordPain.innerHTML= snap.val().PainLevels;
@@ -127,8 +125,9 @@ var config = {
   });
     }
   
+    //sends the record to firebase ( this is just an update function)
 
-    function sendRecord (){     //sends the record to firebase ( this is just an update function)
+    function sendRecord (){     
       if(userSpecDay===""){   //catches error
         alert("Error");
 
@@ -152,8 +151,9 @@ var config = {
   }
  }
  
+     //creates day
 
-    function createDay() {        //creates day
+    function createDay() {       
       if(userinput==="undefined"){
         alert("error");
       }
@@ -163,12 +163,16 @@ var config = {
         
     }
 
-    function deleteDay(){   //deletes Day
+    //deletes Day
+
+    function deleteDay(){   
       var rootRefRec = firebase.database().ref().child('Patients').child(userinput).child('Records').child(userSpecDay);
       rootRefRec.remove();
     }
 
-    function createPatient () {     //creates patient
+        //creates patient
+
+    function createPatient () {     
 
       var count=0;
 
@@ -184,6 +188,8 @@ var config = {
                    addPatientButtons(patientId);
          
                    rootRefRec = firebase.database().ref().child('Patients').child(patientId);
+              
+                         //setting the patient data
     
                            rootRefRec.child("Patient Information").set({
 
@@ -266,71 +272,73 @@ var config = {
 
     }
 
+//creates record within the specific patient selected
 
-function createRecord() {   //creates record within the specific patient selected
-  var i;
-  if(userinput==='undefined'){
-    alert("error");
-  }
-  else {
+    function createRecord() {   
+      var i;
+      if(userinput==='undefined'){
+        alert("error");
+      }
+      else {
 
-      var rootRefRec = firebase.database().ref().child('Patients').child(userinput).child('Records');
-      rootRefRec.once('value', function(snapshot) {
-
-
-        i= snapshot.numChildren()+1;
-           addPatientDay("Day"+i);
-
-          rootRefRec.child("Day"+i).set({
-            
-                                Comments:"",
-                                Date:"",
-                                Day:"",
-                                PainLevels:"",
-                                Time:"",
-                                Tempature:"",
-                                RespiratoryRate:"",
-                                IVCheck:"",
-                                WoundCheck:"",
-                                NurseNo:"",
-                                IntakeTime:"",
-                                IntakeFluid:"",
-                                OutType:"",
-                                PainSystem:""
-
-              });
-          rootRefRec.child("Day"+i).child("PS").set({
-                      Activity:"",
-                      Respiration:"",
-                      Circulation:"",
-                      Conciousness:"",
-                      OxygenSaturation:"",
-                      Dressing:"",
-                      Pain:"",
-                      Ambutation:"",
-                      Fast_Feed:"",
-                      UrineOutput:"",
-                      Result:"",
-                      Verdict:""
-                    })
-
-      });
-      
+          var rootRefRec = firebase.database().ref().child('Patients').child(userinput).child('Records');
+          rootRefRec.once('value', function(snapshot) {
 
 
+            i= snapshot.numChildren()+1;
+               addPatientDay("Day"+i);
+
+              rootRefRec.child("Day"+i).set({
+
+                                    Comments:"",
+                                    Date:"",
+                                    Day:"",
+                                    PainLevels:"",
+                                    Time:"",
+                                    Tempature:"",
+                                    RespiratoryRate:"",
+                                    IVCheck:"",
+                                    WoundCheck:"",
+                                    NurseNo:"",
+                                    IntakeTime:"",
+                                    IntakeFluid:"",
+                                    OutType:"",
+                                    PainSystem:""
+
+                  });
+              rootRefRec.child("Day"+i).child("PS").set({
+                          Activity:"",
+                          Respiration:"",
+                          Circulation:"",
+                          Conciousness:"",
+                          OxygenSaturation:"",
+                          Dressing:"",
+                          Pain:"",
+                          Ambutation:"",
+                          Fast_Feed:"",
+                          UrineOutput:"",
+                          Result:"",
+                          Verdict:""
+                        })
+
+          });
 
 
 
 
- 
-  }  
-
-       
-
-}
 
 
-function addPatientButtons(number){ // dynamically makes the new buttons based on how many patients
+
+
+      }  
+
+
+
+    }
+
+ // dynamically makes the new buttons based on how many patients
+
+function addPatientButtons(number){
  
    var div = document.getElementById('newStuff');
           var but = document.createElement("button");
@@ -346,7 +354,9 @@ function addPatientButtons(number){ // dynamically makes the new buttons based o
           
 
 }
-function addPatientDay(day){  //dynamically adds the days of the selected patient
+ //dynamically adds the days of the selected patient
+
+function addPatientDay(day){ 
   
           var div = document.getElementById('daysDiv');
           var but = document.createElement("button");
@@ -358,15 +368,17 @@ function addPatientDay(day){  //dynamically adds the days of the selected patien
           
 
 }
+ //resets the div element
 
-function resetDays() {        //resets the div element
+function resetDays() {       
 
         var div = document.getElementById('daysDiv');
         div.innerHTML="";
   
 }
+//not great but half works
 
-function deletePatient() {    //not great but half works
+function deletePatient() {    
 
          var rootRefRec = firebase.database().ref().child('Patients').child(userinput);
          rootRefRec.remove();

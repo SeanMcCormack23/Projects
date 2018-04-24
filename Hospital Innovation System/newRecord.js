@@ -52,6 +52,11 @@ function sendNewRecord(Day) {
     verdict="Denied";
   }
   result=parseInt(result);
+    
+    
+    
+    
+    //updating the record
 
   var ref = firebase.database().ref().child('Patients').child(idVal).child("Records").child(day);
 
@@ -75,6 +80,9 @@ function sendNewRecord(Day) {
 
 
   });
+    
+    
+    //updating the data
 
    var ref2 =firebase.database().ref().child('Patients').child(idVal).child("Records").child(day).child("PS");
 

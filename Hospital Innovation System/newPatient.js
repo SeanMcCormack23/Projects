@@ -13,7 +13,7 @@ function sendNewPatient(userID) {
 
   
   
-
+//variables for patient form
 
   var DOBVal = document.getElementById('DOB').value;
   var nameVal = document.getElementById('name').value;
@@ -48,7 +48,7 @@ function sendNewPatient(userID) {
   var surgeryPhone = document.getElementById('surgeryPhone').value;
 
   
- 
+ //snapshots and sending information
 var ref = firebase.database().ref().child('Patients').child(idVal).child('Patient Information').child('Personal');
    ref.update({
 
@@ -64,7 +64,7 @@ var ref = firebase.database().ref().child('Patients').child(idVal).child('Patien
 
 
   });
-
+//snapshot and sending information into folders
 var ref1 = firebase.database().ref().child('Patients').child(idVal).child('Patient Information').child('Contact');
 
 ref1.update({
@@ -82,6 +82,7 @@ ref1.update({
 
 });
 
+    //sending information to 'Treatment'
 var ref2 = firebase.database().ref().child('Patients').child(idVal).child('Patient Information').child('Treatment');
 
    ref2.update({
@@ -100,26 +101,4 @@ var ref2 = firebase.database().ref().child('Patients').child(idVal).child('Patie
 
 
 
-
-
-
-
-
-// var query = firebase.database().ref().child("Patient Information").orderByKey();
-// query.once("value")
-//   .then(function(snapshot) {
-//     snapshot.forEach(function(childSnapshot) {
-       
-        
-        
-//       // key will be "ada" the first time and "alan" the second time
-//       var key = childSnapshot.key;
-//       // childData will be the actual contents of the child
-//       var childData = childSnapshot.val();
-//       var name_val = childSnapshot.val().Name;//the value eoin
-//       console.log(name_val);
-
-   
-//   });
-// });
 }

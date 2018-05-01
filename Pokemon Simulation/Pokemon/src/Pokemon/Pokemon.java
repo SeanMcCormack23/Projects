@@ -11,6 +11,7 @@ public abstract class Pokemon implements Attack{
     public String type;
     public  int level;
     public  String name;
+    public int rarity;
 
 
 

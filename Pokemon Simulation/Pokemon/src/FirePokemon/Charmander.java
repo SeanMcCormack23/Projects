@@ -9,6 +9,8 @@ import Pokemon.Pokemon;
         super.type="fire";
        super.setOverallHP(60);
        super.currentHP=getOverallHP();
+       super.rarity = 65;
+       super.level = 5;
     }
 
      public Pokemon Evolution(Pokemon c){
@@ -27,7 +29,7 @@ import Pokemon.Pokemon;
 
         ref.currentHP -=15;
 
-       return ref;
+       return this;
 
     }
 

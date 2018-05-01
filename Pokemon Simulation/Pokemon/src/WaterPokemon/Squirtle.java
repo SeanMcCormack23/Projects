@@ -28,7 +28,7 @@ public class Squirtle extends Pokemon {
 
         ref.currentHP -= 15;
 
-        return ref;
+        return this;
 
     }
 

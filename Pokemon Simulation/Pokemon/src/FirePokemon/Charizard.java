@@ -9,6 +9,8 @@ public class Charizard extends Charmeleon {
         super.type="fire";
         super.setOverallHP(120);
         super.currentHP=getOverallHP();
+        super.rarity=90;
+        super.level = 37;
     }
 
     public Pokemon Evolution(){
@@ -20,7 +22,7 @@ public class Charizard extends Charmeleon {
         System.out.println("ch..chh..chharizard");
         p.currentHP-=95;
 
-        return p;
+        return this;
 
     }
 

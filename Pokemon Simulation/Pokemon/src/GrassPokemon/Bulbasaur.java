@@ -23,12 +23,14 @@ public class Bulbasaur extends Pokemon {
 
     public Pokemon Attack(Pokemon p){
         System.out.println("bulba...bulbasaur");
+        System.out.println("I am attacking a "+p.getClass());
         Pokemon ref;
         ref = p;
 
+        System.out.println(" his health is "+p.currentHP);
         ref.currentHP -=15;
 
-        return ref;
+        return this;
 
     }
 

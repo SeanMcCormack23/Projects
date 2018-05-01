@@ -1,9 +1,12 @@
 package World;
-import FirePokemon.Charizard;
-import FirePokemon.Charmeleon;
-import GrassPokemon.Bulbasaur;
+import FirePokemon.*;
+
+import GrassPokemon.*;
+import Pokeball.Standard_Pokeball;
 import Pokemon.Pokemon;
-import FirePokemon.Charmander;
+import Catch_Scenario.*;
+import Pokeball.*;
+
 public class main {
 
     public static void main(String [] args){
@@ -15,13 +18,24 @@ Pokemon e = new Charizard();
 
 
 
-    System.out.println(c);
-        System.out.println(c.getOverallHP());
+        Pokeball ball = new Standard_Pokeball();
 
-    c = c.Evolution(c);
-    System.out.println(c);
-        System.out.println(c.getOverallHP());
+        c = c.Attack(d);
+        c = c.Attack(d);
 
+
+
+//
+//        System.out.println(d.getOverallHP());
+//        System.out.println(d.currentHP);
+
+           boolean ans = Catch.Catch(d,ball);
+
+
+//    c = c.Evolution(c);
+//    System.out.println(c);
+//
+//
 
 
 

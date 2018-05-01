@@ -21,7 +21,7 @@ public class Venusaur extends Ivysaur {
         System.out.println("Charmeleon...ch..chh");
         p.currentHP-=70;
 
-        return p;
+        return this;
 
     }
 

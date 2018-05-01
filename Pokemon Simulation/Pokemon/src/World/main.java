@@ -22,20 +22,22 @@ Pokemon e = new Charizard();
 
         c = c.Attack(d);
         c = c.Attack(d);
+        c= c.Attack(d);
+        c = c.Attack(d);
+//        c= c.Attack(d);
+//        c= c.Attack(d);
+//        c = c.Attack(d);
 
 
-
-//
-//        System.out.println(d.getOverallHP());
-//        System.out.println(d.currentHP);
 
            boolean ans = Catch.Catch(d,ball);
 
+           System.out.println("did i catch "+d.getClass()+" = "+ans);
 
-//    c = c.Evolution(c);
-//    System.out.println(c);
-//
-//
+
+
+
+
 
 
 

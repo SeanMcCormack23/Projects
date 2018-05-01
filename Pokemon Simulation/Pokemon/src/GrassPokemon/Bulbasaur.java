@@ -10,6 +10,8 @@ public class Bulbasaur extends Pokemon {
         super.type="grass";
         super.setOverallHP(60);
         super.currentHP=getOverallHP();
+        super.level=5;
+        super.rarity = 60;
     }
 
     public Pokemon Evolution(Pokemon c){
@@ -22,13 +24,12 @@ public class Bulbasaur extends Pokemon {
     }
 
     public Pokemon Attack(Pokemon p){
-        System.out.println("bulba...bulbasaur");
-        System.out.println("I am attacking a "+p.getClass());
+
         Pokemon ref;
         ref = p;
 
-        System.out.println(" his health is "+p.currentHP);
-        ref.currentHP -=15;
+
+        ref.currentHP -=10;
 
         return this;
 

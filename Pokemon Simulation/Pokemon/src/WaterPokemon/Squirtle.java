@@ -10,6 +10,8 @@ public class Squirtle extends Pokemon {
         super.type = "water";
         super.setOverallHP(60);
         super.currentHP = getOverallHP();
+        super.status = "none";
+        super.rarity = 5;
     }
 
     public Pokemon Evolution(Pokemon c) {

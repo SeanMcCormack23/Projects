@@ -9,8 +9,9 @@ public class Charmeleon extends Charmander {
         super.type="fire";
         super.setOverallHP(90);
         super.currentHP=getOverallHP();
-        super.rarity=70;
+        super.rarity=5;
         super.level = 17;
+        super.status = "none";
     }
 
     public Pokemon Evolution(){

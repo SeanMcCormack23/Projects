@@ -12,6 +12,15 @@ public abstract class Pokemon implements Attack{
     public  int level;
     public  String name;
     public int rarity;
+    public String status;
+    public String attack1Name;
+    public int attack1;
+    public String attack2Name;
+    public int attack2;
+    public String attack3Name;
+    public int attack3;
+    public String attack4Name;
+    public int attack4;
 
 
 

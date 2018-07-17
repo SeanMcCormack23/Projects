@@ -10,6 +10,8 @@ public class Blastoise extends Wartortle {
         super.type="water";
         super.setOverallHP(112);
         super.currentHP=getOverallHP();
+        super.status = "none";
+        super.rarity = 3;
     }
 
     public Pokemon Evolution(){

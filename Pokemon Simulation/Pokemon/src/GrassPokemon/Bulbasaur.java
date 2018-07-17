@@ -11,7 +11,8 @@ public class Bulbasaur extends Pokemon {
         super.setOverallHP(60);
         super.currentHP=getOverallHP();
         super.level=5;
-        super.rarity = 60;
+        super.status = "none";
+        super.rarity= 5;
     }
 
     public Pokemon Evolution(Pokemon c){

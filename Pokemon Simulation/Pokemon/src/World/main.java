@@ -1,4 +1,5 @@
 package World;
+import ElectricPokemon.Pikachu;
 import FirePokemon.*;
 
 import GrassPokemon.*;
@@ -18,21 +19,41 @@ Pokemon e = new Charizard();
 
 
 
-        Pokeball ball = new Standard_Pokeball();
-
-        c = c.Attack(d);
-        c = c.Attack(d);
-        c= c.Attack(d);
-        c = c.Attack(d);
-//        c= c.Attack(d);
-//        c= c.Attack(d);
-//        c = c.Attack(d);
+        Pokeball ball = new Ultra_Ball();
 
 
 
-           boolean ans = Catch.Catch(d,ball);
 
-           System.out.println("did i catch "+d.getClass()+" = "+ans);
+        System.out.println(c.getClass()+" health is "+c.currentHP);
+
+        Pokemon pickachu = new Pikachu();
+        System.out.println(pickachu.getClass()+" health is "+pickachu.currentHP);
+
+        pickachu = pickachu.Attack(c);
+
+        System.out.println(c.getClass()+" health is "+c.currentHP);
+
+        System.out.println(pickachu.getClass()+" health is "+pickachu.currentHP);
+
+
+        c = c.Attack(pickachu);
+        c = c.Attack(pickachu);
+        c = c.Attack(pickachu);
+
+        c = c.Attack(pickachu);
+        c = c.Attack(pickachu);
+        c = c.Attack(pickachu);
+
+
+
+        System.out.println(pickachu.getClass()+" health is "+pickachu.currentHP);
+
+
+
+
+          boolean ans = Catch1_2.Catch(pickachu,ball);
+
+           System.out.println("did i catch "+pickachu.getClass()+" = "+ans);
 
 
 

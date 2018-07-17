@@ -9,6 +9,8 @@ public class Venusaur extends Ivysaur {
         super.type="grass";
         super.setOverallHP(110);
         super.currentHP=getOverallHP();
+        super.status = "none";
+        super.rarity = 3;
     }
 
     public Pokemon Evolution(){

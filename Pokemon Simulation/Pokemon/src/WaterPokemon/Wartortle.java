@@ -10,6 +10,8 @@ public class Wartortle extends Squirtle {
         super.type="water";
         super.setOverallHP(90);
         super.currentHP=getOverallHP();
+        super.status = "none";
+        super.rarity = 4;
     }
 
     public Pokemon Evolution(){
